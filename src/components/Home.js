@@ -44,10 +44,10 @@ export function renderHome(personal = {}, content = homeData) {
                   class="w-16 h-16 sm:w-22 sm:h-22 rounded-full object-cover object-center border border-zinc-200/80 dark:border-zinc-800 shadow-sm shrink-0"
                 />
                 <div class="space-y-1 sm:space-y-1.5 min-w-0">
-                  <h1 class="text-xl sm:text-3xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50 leading-tight">
+                  <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50 leading-tight">
                     ${name}
                   </h1>
-                  <p class="text-xs sm:text-sm font-mono text-zinc-500 dark:text-zinc-400">
+                  <p class="text-sm sm:text-base font-mono text-zinc-500 dark:text-zinc-400">
                     ${role} &bull; ${location}
                   </p>
                 </div>
@@ -73,14 +73,14 @@ export function renderHome(personal = {}, content = homeData) {
 
             <!-- Row 2: Status & Action Bar (Availability on left, Action on right) -->
             <div class="flex items-center justify-between gap-3 pt-1.5 sm:pt-0.5">
-              <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-mono bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-400 border border-emerald-200/60 dark:border-emerald-800/40">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-mono bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-400 border border-emerald-200/60 dark:border-emerald-800/40">
                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                 ${availability}
               </span>
 
               <a
                 href="#/resume"
-                class="group inline-flex items-center gap-1.5 text-xs font-mono font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors shrink-0"
+                class="group inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors shrink-0"
               >
                 <span>...more about me</span>
                 <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">&rarr;</span>
@@ -90,31 +90,31 @@ export function renderHome(personal = {}, content = homeData) {
 
           <!-- About Section (Two-Column read.cv Alignment) -->
           <section class="grid grid-cols-1 sm:grid-cols-[110px_1fr] gap-1.5 sm:gap-6 py-4 sm:py-6 border-b border-zinc-200/80 dark:border-zinc-800">
-            <h2 class="text-xs font-mono uppercase tracking-wider text-zinc-400 dark:text-zinc-500 pt-0.5">
+            <h2 class="text-xs sm:text-sm font-mono uppercase tracking-wider text-zinc-400 dark:text-zinc-500 pt-0.5">
               About
             </h2>
-            <p class="text-sm sm:text-base text-zinc-600 dark:text-zinc-300 leading-relaxed">
+            <p class="text-base sm:text-[17px] text-zinc-600 dark:text-zinc-300 leading-relaxed">
               ${content.about}
             </p>
           </section>
 
           <!-- Selected Experience (Two-Column read.cv Alignment) -->
           <section class="grid grid-cols-1 sm:grid-cols-[110px_1fr] gap-1.5 sm:gap-6 py-4 sm:py-6 border-b border-zinc-200/80 dark:border-zinc-800">
-            <h2 class="text-xs font-mono uppercase tracking-wider text-zinc-400 dark:text-zinc-500 pt-0.5">
+            <h2 class="text-xs sm:text-sm font-mono uppercase tracking-wider text-zinc-400 dark:text-zinc-500 pt-0.5">
               Experience
             </h2>
             <div class="space-y-4 sm:space-y-6">
               ${featuredExperience.map(exp => `
                 <div class="space-y-1">
                   <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-                    <div class="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                    <div class="text-base font-medium text-zinc-900 dark:text-zinc-100">
                       ${exp.role} <span class="text-zinc-400 dark:text-zinc-500 font-normal">at</span> <span class="text-zinc-950 dark:text-zinc-100 font-semibold">${exp.company}</span>
                     </div>
-                    <div class="text-xs font-mono text-zinc-400 dark:text-zinc-500 shrink-0">
+                    <div class="text-xs sm:text-sm font-mono text-zinc-400 dark:text-zinc-500 shrink-0">
                       ${exp.period}
                     </div>
                   </div>
-                  <p class="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                  <p class="text-sm sm:text-base text-zinc-500 dark:text-zinc-400 leading-relaxed">
                     ${exp.description}
                   </p>
                 </div>
@@ -123,7 +123,7 @@ export function renderHome(personal = {}, content = homeData) {
               <div class="pt-1 sm:pt-2">
                 <a
                   href="#/resume"
-                  class="group inline-flex items-center gap-1.5 text-xs font-mono font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors"
+                  class="group inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors"
                 >
                   <span>View complete 15+ years career timeline</span>
                   <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">&rarr;</span>
@@ -134,19 +134,19 @@ export function renderHome(personal = {}, content = homeData) {
 
           <!-- Selected Writing (Two-Column read.cv Alignment) -->
           <section class="grid grid-cols-1 sm:grid-cols-[110px_1fr] gap-1.5 sm:gap-6 py-4 sm:py-6 border-b border-zinc-200/80 dark:border-zinc-800">
-            <h2 class="text-xs font-mono uppercase tracking-wider text-zinc-400 dark:text-zinc-500 pt-0.5">
+            <h2 class="text-xs sm:text-sm font-mono uppercase tracking-wider text-zinc-400 dark:text-zinc-500 pt-0.5">
               Writing
             </h2>
             <div class="space-y-2.5 sm:space-y-3.5">
               ${featuredWriting.map(art => `
                 <a
                   href="#/notes/${art.slug}"
-                  class="group flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 sm:gap-4 text-sm"
+                  class="group flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 sm:gap-4 text-base"
                 >
                   <span class="text-zinc-900 dark:text-zinc-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors font-medium">
                     ${art.title}
                   </span>
-                  <div class="flex items-center gap-2 text-xs font-mono text-zinc-400 dark:text-zinc-500 shrink-0">
+                  <div class="flex items-center gap-2 text-xs sm:text-sm font-mono text-zinc-400 dark:text-zinc-500 shrink-0">
                     <span>${art.readTime}</span>
                   </div>
                 </a>
@@ -155,7 +155,7 @@ export function renderHome(personal = {}, content = homeData) {
               <div class="pt-1 sm:pt-2">
                 <a
                   href="#/notes"
-                  class="group inline-flex items-center gap-1.5 text-xs font-mono font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors"
+                  class="group inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors"
                 >
                   <span>Read all engineering notes</span>
                   <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">&rarr;</span>
@@ -167,7 +167,7 @@ export function renderHome(personal = {}, content = homeData) {
         </main>
 
         <!-- 3. Minimal Monospaced Footer -->
-        <footer class="pt-5 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 font-mono text-xs text-zinc-500 dark:text-zinc-500 text-center sm:text-left">
+        <footer class="pt-5 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 font-mono text-xs sm:text-sm text-zinc-500 dark:text-zinc-500 text-center sm:text-left">
           <div>
             ${footerLocation} &bull; ${footerYear}
           </div>

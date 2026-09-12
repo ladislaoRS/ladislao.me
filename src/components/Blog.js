@@ -35,14 +35,14 @@ export function formatMarkdown(markdown = '') {
 
   // 1. Multi-line code blocks: ```lang ... ```
   let html = markdown.replace(/```([a-z]*)\n([\s\S]*?)```/g, (_, lang, code) => {
-    return `<pre class="my-4 p-4 rounded-xl bg-zinc-950 text-zinc-200 font-mono text-xs border border-zinc-800 overflow-x-auto leading-relaxed"><code>${code.trim()}</code></pre>`;
+    return `<pre class="my-4 p-4 rounded-xl bg-zinc-950 text-zinc-200 font-mono text-xs sm:text-sm border border-zinc-800 overflow-x-auto leading-relaxed"><code>${code.trim()}</code></pre>`;
   });
 
   // 2. Bold text: **text**
   html = html.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-zinc-900 dark:text-zinc-100">$1</strong>');
 
   // 3. Inline code badges: `code`
-  html = html.replace(/`([^`]+)`/g, '<code class="px-1.5 py-0.5 text-xs font-mono font-medium rounded bg-zinc-100 dark:bg-zinc-800/80 text-emerald-600 dark:text-emerald-400 border border-zinc-200/80 dark:border-zinc-700/60">$1</code>');
+  html = html.replace(/`([^`]+)`/g, '<code class="px-1.5 py-0.5 text-xs sm:text-sm font-mono font-medium rounded bg-zinc-100 dark:bg-zinc-800/80 text-emerald-600 dark:text-emerald-400 border border-zinc-200/80 dark:border-zinc-700/60">$1</code>');
 
   // 4. Split by double newlines into block groups
   const blocks = html.split(/\n\s*\n/);
@@ -122,15 +122,15 @@ export function renderBlogIndex(articles) {
               </a>
             </h2>
 
-            <p class="mt-3 text-sm sm:text-base text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            <p class="mt-3 text-base sm:text-lg text-zinc-600 dark:text-zinc-400 leading-relaxed">
               ${article.excerpt}
             </p>
 
             <div class="mt-5 flex items-center justify-between pt-4 border-t border-zinc-200/60 dark:border-zinc-800/60">
-              <span class="text-xs font-mono text-zinc-400 dark:text-zinc-500">
+              <span class="text-xs sm:text-sm font-mono text-zinc-400 dark:text-zinc-500">
                 Article 0${index + 1}
               </span>
-              <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 group-hover:translate-x-1 transition-transform">
+              <span class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-emerald-600 dark:text-emerald-400 group-hover:translate-x-1 transition-transform">
                 Read article
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -154,14 +154,14 @@ export function renderArticleView(article) {
   return `
     <article class="space-y-10 animate-fade-in max-w-4xl mx-auto">
       <!-- Breadcrumb Navigation -->
-      <nav class="flex items-center justify-between text-xs text-zinc-500 dark:text-zinc-400 pb-2">
+      <nav class="flex items-center justify-between text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 pb-2">
         <a href="#/notes" class="inline-flex items-center gap-1.5 font-medium hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
           Back to Notes
         </a>
-        <span class="font-mono text-[11px]">${article.readTime}</span>
+        <span class="font-mono text-xs">${article.readTime}</span>
       </nav>
 
       <!-- Article Header -->
@@ -171,7 +171,7 @@ export function renderArticleView(article) {
             ${article.category}
           </span>
           <span class="text-xs text-zinc-400">&bull;</span>
-          <span class="text-xs text-zinc-500 dark:text-zinc-400">${article.date}</span>
+          <span class="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400">${article.date}</span>
         </div>
 
         <h1 class="text-2xl sm:text-4xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-50 leading-tight">
@@ -195,7 +195,7 @@ export function renderArticleView(article) {
             Production Failure Mode
           </h2>
         </div>
-        <div class="text-sm sm:text-base leading-relaxed">
+        <div class="text-base sm:text-lg leading-relaxed">
           ${formatMarkdown(article.problem)}
         </div>
       </section>
@@ -212,7 +212,7 @@ export function renderArticleView(article) {
             The Architectural Solution
           </h2>
         </div>
-        <div class="text-sm sm:text-base leading-relaxed">
+        <div class="text-base sm:text-lg leading-relaxed">
           ${formatMarkdown(article.solution)}
         </div>
       </section>
@@ -304,15 +304,15 @@ export function renderArticleView(article) {
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <!-- Pros -->
           <div class="p-5 sm:p-6 rounded-2xl bg-emerald-50/40 dark:bg-emerald-950/20 border border-emerald-200/60 dark:border-emerald-900/50 space-y-4">
-            <div class="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-bold text-sm">
+            <div class="flex items-center gap-2 text-emerald-700 dark:text-emerald-400 font-bold text-sm sm:text-base">
               <span class="w-5 h-5 rounded-full bg-emerald-500/20 flex items-center justify-center text-xs">✓</span>
               <span>Key Advantages</span>
             </div>
             <ul class="space-y-3">
               ${article.pros.map(pro => `
                 <li class="space-y-1">
-                  <h4 class="text-xs sm:text-sm font-semibold text-zinc-900 dark:text-zinc-100">${pro.title}</h4>
-                  <p class="text-xs sm:text-[13px] text-zinc-600 dark:text-zinc-400 leading-snug">${pro.description}</p>
+                  <h4 class="text-sm sm:text-base font-semibold text-zinc-900 dark:text-zinc-100">${pro.title}</h4>
+                  <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">${pro.description}</p>
                 </li>
               `).join('')}
             </ul>
@@ -320,15 +320,15 @@ export function renderArticleView(article) {
 
           <!-- Cons -->
           <div class="p-5 sm:p-6 rounded-2xl bg-rose-50/40 dark:bg-rose-950/20 border border-rose-200/60 dark:border-rose-900/50 space-y-4">
-            <div class="flex items-center gap-2 text-rose-700 dark:text-rose-400 font-bold text-sm">
+            <div class="flex items-center gap-2 text-rose-700 dark:text-rose-400 font-bold text-sm sm:text-base">
               <span class="w-5 h-5 rounded-full bg-rose-500/20 flex items-center justify-center text-xs">!</span>
               <span>Trade-offs & Real-World Caveats</span>
             </div>
             <ul class="space-y-3">
               ${article.cons.map(con => `
                 <li class="space-y-1">
-                  <h4 class="text-xs sm:text-sm font-semibold text-zinc-900 dark:text-zinc-100">${con.title}</h4>
-                  <p class="text-xs sm:text-[13px] text-zinc-600 dark:text-zinc-400 leading-snug">${con.description}</p>
+                  <h4 class="text-sm sm:text-base font-semibold text-zinc-900 dark:text-zinc-100">${con.title}</h4>
+                  <p class="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">${con.description}</p>
                 </li>
               `).join('')}
             </ul>
@@ -338,8 +338,8 @@ export function renderArticleView(article) {
 
       <!-- Technical Footnote -->
       ${article.techNote ? `
-        <footer class="p-4 sm:p-5 rounded-xl bg-zinc-100/70 dark:bg-zinc-800/40 border border-zinc-200/70 dark:border-zinc-800 text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed space-y-1">
-          <div class="font-mono font-semibold text-zinc-700 dark:text-zinc-300 text-[11px] uppercase tracking-wider">
+        <footer class="p-4 sm:p-5 rounded-xl bg-zinc-100/70 dark:bg-zinc-800/40 border border-zinc-200/70 dark:border-zinc-800 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed space-y-1">
+          <div class="font-mono font-semibold text-zinc-700 dark:text-zinc-300 text-xs uppercase tracking-wider">
             Technical Footnote
           </div>
           <div class="space-y-2">${formatMarkdown(article.techNote)}</div>
@@ -348,13 +348,13 @@ export function renderArticleView(article) {
 
       <!-- Bottom Navigation Footer -->
       <footer class="pt-8 border-t border-zinc-200/80 dark:border-zinc-800/80 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <a href="#/notes" class="inline-flex items-center gap-2 text-xs font-medium text-zinc-600 dark:text-zinc-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+        <a href="#/notes" class="inline-flex items-center gap-2 text-xs sm:text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
           </svg>
           Back to Notes
         </a>
-        <a href="#/resume" class="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-zinc-900 dark:text-zinc-100 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 rounded-lg transition-colors">
+        <a href="#/resume" class="inline-flex items-center gap-1.5 px-3.5 py-2 text-xs sm:text-sm font-semibold text-zinc-900 dark:text-zinc-100 bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 rounded-lg transition-colors">
           Return to Resume
         </a>
       </footer>

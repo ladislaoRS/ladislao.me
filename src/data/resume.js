@@ -21,7 +21,7 @@ export const resumeData = {
     avatar: "/avatar.jpeg",
   },
 
-  summary: `Senior Software Engineer & Systems Architect with 15+ years of engineering craftsmanship designing, modernizing, and scaling mission-critical distributed systems. Proven track record leading high-concurrency FinTech platforms at Guild Mortgage, state-level public health infrastructure for California (CalVax), and enterprise e-commerce solutions at OtterBox. Specialist in event-driven microservices across AWS and Azure cloud platforms, modern PHP/Laravel architectures, contract-first APIs (GraphQL, OpenAPI), and developer tooling that eliminates friction across distributed teams.`,
+  summary: `Systems Architect & Software Engineer with 15+ years designing, modernizing, and scaling high-throughput distributed systems. I focus on event-driven microservices across AWS and Azure, modern PHP/Laravel platforms, and contract-first APIs (GraphQL, OpenAPI). Highly hands-on and committed to the product, stepping up to lead technical initiatives while keeping engineering teams unblocked and aligned.`,
 
   philosophy: [
     {
@@ -69,7 +69,7 @@ export const resumeData = {
   experience: [
     {
       role: "Senior Software Engineer",
-      company: "Guild Mortgage Company / Tavant Technologies",
+      company: "Guild Mortgage / Tavant",
       location: "San Diego, CA (Remote)",
       period: "Oct 2022 — Present",
       isCurrent: true,
@@ -85,7 +85,7 @@ export const resumeData = {
       techStack: ["Microservices", "PHP / Laravel", "GraphQL", "REST / OpenAPI 3.0", "AWS (SQS/SNS)", "Azure B2C / Service Bus", "RabbitMQ", "Grafana", "PostgreSQL", "MSSQL", "MySQL", "Redis", "Docker"],
     },
     {
-      role: "Full-Stack Engineer / Backend Developer",
+      role: "Full-Stack Engineer Developer",
       company: "OtterBox, LLC",
       location: "Fort Collins, CO (Remote)",
       period: "May 2021 — Oct 2022",

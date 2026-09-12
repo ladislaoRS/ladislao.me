@@ -188,7 +188,7 @@ function renderApp() {
         ${renderEducation(resumeData.education, resumeData.certifications)}
         ${renderContact(resumeData.personal)}
         
-        <footer class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 font-mono text-xs text-zinc-500 dark:text-zinc-500 text-center sm:text-left print:hidden">
+        <footer class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 font-mono text-xs sm:text-sm text-zinc-500 dark:text-zinc-500 text-center sm:text-left print:hidden">
           <div>
             El Paso, TX &bull; ${new Date().getFullYear()}
           </div>

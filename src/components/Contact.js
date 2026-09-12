@@ -72,7 +72,7 @@ export function renderContact(personal = {}) {
 
   return `
     <section class="grid grid-cols-1 sm:grid-cols-[110px_1fr] gap-2 sm:gap-6 py-6 border-b border-zinc-200/80 dark:border-zinc-800 print:py-3 print:border-zinc-300 break-inside-avoid">
-      <h2 class="text-xs font-mono uppercase tracking-wider text-zinc-400 dark:text-zinc-500 pt-0.5 print:text-[8pt] print:text-zinc-600">
+      <h2 class="text-xs sm:text-sm font-mono uppercase tracking-wider text-zinc-400 dark:text-zinc-500 pt-0.5 print:text-[8pt] print:text-zinc-600">
         Contact
       </h2>
 
@@ -81,17 +81,17 @@ export function renderContact(personal = {}) {
           <a
             href="${channel.href}"
             ${channel.target ? `target="${channel.target}" rel="noopener noreferrer"` : ''}
-            class="group flex items-center gap-3 p-2.5 sm:p-3 rounded-xl border border-zinc-200/70 dark:border-zinc-800 bg-zinc-50/40 dark:bg-zinc-900/20 hover:border-emerald-500/40 hover:bg-emerald-50/30 dark:hover:bg-emerald-950/20 transition-all duration-200 print:border-zinc-200 print:p-1.5 print:bg-transparent"
+            class="group flex items-center gap-3 p-2.5 sm:p-3.5 rounded-xl border border-zinc-200/70 dark:border-zinc-800 bg-zinc-50/40 dark:bg-zinc-900/20 hover:border-emerald-500/40 hover:bg-emerald-50/30 dark:hover:bg-emerald-950/20 transition-all duration-200 print:border-zinc-200 print:p-1.5 print:bg-transparent"
           >
-            <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-white dark:bg-zinc-800 border border-zinc-200/60 dark:border-zinc-700/60 flex items-center justify-center text-zinc-500 dark:text-zinc-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 shrink-0 transition-colors shadow-2xs print:border-zinc-300 print:w-6 print:h-6 print:text-zinc-700">
+            <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-white dark:bg-zinc-800 border border-zinc-200/60 dark:border-zinc-700/60 flex items-center justify-center text-zinc-500 dark:text-zinc-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 shrink-0 transition-colors shadow-2xs print:border-zinc-300 print:w-6 print:h-6 print:text-zinc-700">
               ${channel.icon}
             </div>
 
             <div class="min-w-0 flex-1">
-              <div class="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider text-zinc-400 dark:text-zinc-500 print:text-[7.5pt]">
+              <div class="text-xs font-mono uppercase tracking-wider text-zinc-400 dark:text-zinc-500 print:text-[7.5pt]">
                 ${channel.label}
               </div>
-              <div class="text-xs sm:text-sm font-medium text-zinc-800 dark:text-zinc-200 truncate group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors print:text-[8pt] print:text-zinc-900">
+              <div class="text-sm sm:text-base font-medium text-zinc-800 dark:text-zinc-200 truncate group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors print:text-[8pt] print:text-zinc-900">
                 ${channel.value}
               </div>
             </div>

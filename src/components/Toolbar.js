@@ -20,14 +20,14 @@ export function renderToolbar(personal = {}, activeRoute = 'resume', articleCoun
       <a
         href="#/"
         id="nav-brand"
-        class="font-mono text-xs font-bold tracking-wider text-zinc-950 dark:text-zinc-50 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors min-w-0 shrink truncate mr-2"
+        class="font-mono text-xs sm:text-sm font-bold tracking-wider text-zinc-950 dark:text-zinc-50 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors min-w-0 shrink truncate mr-2"
         title="Ladislao Ramirez — Home"
       >
         <span id="nav-brand-text" class="transition-opacity duration-150 inline-block truncate">${initialBrandText}</span>
       </a>
 
       <!-- Right: Minimal font-mono navigation & controls -->
-      <nav class="flex items-center gap-3 sm:gap-5 text-xs font-mono text-zinc-500 dark:text-zinc-400 shrink-0">
+      <nav class="flex items-center gap-3 sm:gap-5 text-xs sm:text-sm font-mono text-zinc-500 dark:text-zinc-400 shrink-0">
         <a href="#/" class="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
           Home
         </a>

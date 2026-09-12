@@ -15,18 +15,18 @@ export const homeData = {
     avatar: "/avatar.jpeg",
     availability: "@ Guild Mortgage",
   },
-  about: `Over 15 years designing, modernizing, and operating high-throughput distributed systems. Specialized in event-driven architectures, platform reliability, and leading engineering teams across FinTech, Healthcare, and Automotive.`,
+  about: `Over 15 years building, modernizing, and operating distributed systems where reliability matters. I specialize in event-driven architectures and contract-first APIs, deeply committed to writing solid systems and helping engineering teams ship with confidence.`,
   featuredExperience: [
     {
       company: "Guild Mortgage",
-      role: "Senior Software Engineer",
+      role: "Lead Software Engineer",
       period: "2022 — Present",
       description: "Architecting high-concurrency microservices and resilient event pipelines across AWS and Azure for U.S. mortgage platforms.",
       href: "#/resume",
     },
     {
       company: "OtterBox",
-      role: "Full-Stack Backend Engineer",
+      role: "Full-Stack Engineer",
       period: "2021 — 2022",
       description: "Engineered global e-commerce integrations across Salesforce Commerce Cloud, enterprise ERPs, and distributed payment systems.",
       href: "#/resume",

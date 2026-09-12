@@ -25,11 +25,11 @@ export function renderHeader(personal = {}) {
         ` : ''}
 
         <div class="space-y-1 sm:space-y-1.5 flex-1 min-w-0">
-          <h1 id="profile-hero-name" class="text-xl sm:text-3xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50 print:text-2xl print:text-black leading-tight">
+          <h1 id="profile-hero-name" class="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50 print:text-2xl print:text-black leading-tight">
             ${name}
           </h1>
 
-          <p class="text-xs sm:text-sm font-mono text-zinc-500 dark:text-zinc-400 print:text-[8.5pt] print:text-zinc-700">
+          <p class="text-sm sm:text-base font-mono text-zinc-500 dark:text-zinc-400 print:text-[8.5pt] print:text-zinc-700">
             ${role} &bull; ${location}
           </p>
         </div>
