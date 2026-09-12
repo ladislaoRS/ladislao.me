@@ -47,7 +47,7 @@ export function renderHome(personal = {}, content = homeData) {
                   <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight text-zinc-950 dark:text-zinc-50 leading-tight">
                     ${name}
                   </h1>
-                  <p class="text-sm sm:text-base font-mono text-zinc-500 dark:text-zinc-400">
+                  <p class="text-base font-mono text-zinc-500 dark:text-zinc-400">
                     ${role} &bull; ${location}
                   </p>
                 </div>
@@ -93,7 +93,7 @@ export function renderHome(personal = {}, content = homeData) {
             <h2 class="text-xs sm:text-sm font-mono uppercase tracking-wider text-zinc-400 dark:text-zinc-500 pt-0.5">
               About
             </h2>
-            <p class="text-base sm:text-[17px] text-zinc-600 dark:text-zinc-300 leading-relaxed">
+            <p class="text-base sm:text-lg text-zinc-700 dark:text-zinc-300 leading-relaxed">
               ${content.about}
             </p>
           </section>
@@ -107,14 +107,14 @@ export function renderHome(personal = {}, content = homeData) {
               ${featuredExperience.map(exp => `
                 <div class="space-y-1">
                   <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1">
-                    <div class="text-base font-medium text-zinc-900 dark:text-zinc-100">
+                    <div class="text-base sm:text-lg font-medium text-zinc-900 dark:text-zinc-100">
                       ${exp.role} <span class="text-zinc-400 dark:text-zinc-500 font-normal">at</span> <span class="text-zinc-950 dark:text-zinc-100 font-semibold">${exp.company}</span>
                     </div>
-                    <div class="text-xs sm:text-sm font-mono text-zinc-400 dark:text-zinc-500 shrink-0">
+                    <div class="text-sm font-mono text-zinc-500 dark:text-zinc-400 shrink-0">
                       ${exp.period}
                     </div>
                   </div>
-                  <p class="text-sm sm:text-base text-zinc-500 dark:text-zinc-400 leading-relaxed">
+                  <p class="text-base text-zinc-600 dark:text-zinc-300 leading-relaxed">
                     ${exp.description}
                   </p>
                 </div>
@@ -123,7 +123,7 @@ export function renderHome(personal = {}, content = homeData) {
               <div class="pt-1 sm:pt-2">
                 <a
                   href="#/resume"
-                  class="group inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors"
+                  class="group inline-flex items-center gap-1.5 text-sm font-mono font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors"
                 >
                   <span>View complete 15+ years career timeline</span>
                   <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">&rarr;</span>
@@ -137,16 +137,16 @@ export function renderHome(personal = {}, content = homeData) {
             <h2 class="text-xs sm:text-sm font-mono uppercase tracking-wider text-zinc-400 dark:text-zinc-500 pt-0.5">
               Writing
             </h2>
-            <div class="space-y-2.5 sm:space-y-3.5">
+            <div class="space-y-3 sm:space-y-4">
               ${featuredWriting.map(art => `
                 <a
                   href="#/notes/${art.slug}"
-                  class="group flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 sm:gap-4 text-base"
+                  class="group flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 sm:gap-4"
                 >
-                  <span class="text-zinc-900 dark:text-zinc-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors font-medium">
+                  <span class="text-base sm:text-lg text-zinc-900 dark:text-zinc-100 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors font-medium">
                     ${art.title}
                   </span>
-                  <div class="flex items-center gap-2 text-xs sm:text-sm font-mono text-zinc-400 dark:text-zinc-500 shrink-0">
+                  <div class="flex items-center gap-2 text-sm font-mono text-zinc-500 dark:text-zinc-400 shrink-0">
                     <span>${art.readTime}</span>
                   </div>
                 </a>
@@ -155,7 +155,7 @@ export function renderHome(personal = {}, content = homeData) {
               <div class="pt-1 sm:pt-2">
                 <a
                   href="#/notes"
-                  class="group inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors"
+                  class="group inline-flex items-center gap-1.5 text-sm font-mono font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors"
                 >
                   <span>Read all engineering notes</span>
                   <span class="group-hover:translate-x-1 transition-transform" aria-hidden="true">&rarr;</span>
@@ -167,7 +167,7 @@ export function renderHome(personal = {}, content = homeData) {
         </main>
 
         <!-- 3. Minimal Monospaced Footer -->
-        <footer class="pt-5 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 font-mono text-xs sm:text-sm text-zinc-500 dark:text-zinc-500 text-center sm:text-left">
+        <footer class="pt-5 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4 font-mono text-sm text-zinc-500 dark:text-zinc-400 text-center sm:text-left">
           <div>
             ${footerLocation} &bull; ${footerYear}
           </div>

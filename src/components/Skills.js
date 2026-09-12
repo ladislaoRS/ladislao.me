@@ -7,14 +7,14 @@
 export function renderSkills(competencies) {
   const categoryBlocks = Object.entries(competencies).map(([category, skills]) => {
     const skillBadges = skills.map(skill => `
-      <span class="inline-flex items-center px-2.5 py-1 sm:py-0.5 rounded text-xs sm:text-sm font-mono bg-zinc-100 dark:bg-zinc-800/70 text-zinc-700 dark:text-zinc-300 border border-zinc-200/60 dark:border-zinc-700/60 print:border-zinc-300 print:bg-transparent print:text-zinc-800 print:text-[7.5pt] print:py-0 print:px-1">
+      <span class="inline-flex items-center px-3 py-1 sm:py-0.5 rounded text-sm font-mono bg-zinc-100 dark:bg-zinc-800/70 text-zinc-800 dark:text-zinc-200 border border-zinc-200/60 dark:border-zinc-700/60 print:border-zinc-300 print:bg-transparent print:text-zinc-800 print:text-[7.5pt] print:py-0 print:px-1">
         ${skill}
       </span>
     `).join('');
 
     return `
       <div class="space-y-1.5 print-avoid-break">
-        <h3 class="text-xs sm:text-sm font-mono font-medium text-zinc-400 dark:text-zinc-500 print:text-[8pt] print:text-zinc-700">
+        <h3 class="text-sm font-mono font-medium text-zinc-500 dark:text-zinc-400 print:text-[8pt] print:text-zinc-700">
           ${category}
         </h3>
         <div class="flex flex-wrap gap-1.5 sm:gap-2 print:gap-1">

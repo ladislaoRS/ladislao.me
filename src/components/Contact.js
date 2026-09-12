@@ -88,10 +88,10 @@ export function renderContact(personal = {}) {
             </div>
 
             <div class="min-w-0 flex-1">
-              <div class="text-xs font-mono uppercase tracking-wider text-zinc-400 dark:text-zinc-500 print:text-[7.5pt]">
+              <div class="text-xs sm:text-sm font-mono uppercase tracking-wider text-zinc-400 dark:text-zinc-500 print:text-[7.5pt]">
                 ${channel.label}
               </div>
-              <div class="text-sm sm:text-base font-medium text-zinc-800 dark:text-zinc-200 truncate group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors print:text-[8pt] print:text-zinc-900">
+              <div class="text-base font-medium text-zinc-900 dark:text-zinc-100 truncate group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors print:text-[8pt] print:text-zinc-900">
                 ${channel.value}
               </div>
             </div>

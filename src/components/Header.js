@@ -29,7 +29,7 @@ export function renderHeader(personal = {}) {
             ${name}
           </h1>
 
-          <p class="text-sm sm:text-base font-mono text-zinc-500 dark:text-zinc-400 print:text-[8.5pt] print:text-zinc-700">
+          <p class="text-base font-mono text-zinc-500 dark:text-zinc-400 print:text-[8.5pt] print:text-zinc-700">
             ${role} &bull; ${location}
           </p>
         </div>
