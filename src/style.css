@@ -1,0 +1,245 @@
+@import "tailwindcss";
+
+/* Enable class-based dark mode in Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Prism Syntax Highlighting (Artisan Dark Theme) */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #f4f4f5;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  tab-size: 4;
+  hyphens: none;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #71717a;
+  font-style: italic;
+}
+
+.token.punctuation {
+  color: #a1a1aa;
+}
+
+.token.namespace {
+  color: #38bdf8;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol {
+  color: #fbbf24;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin {
+  color: #34d399;
+}
+
+.token.operator,
+.token.entity,
+.token.url {
+  color: #38bdf8;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #c084fc;
+  font-weight: 500;
+}
+
+.token.function,
+.token.class-name {
+  color: #60a5fa;
+  font-weight: 500;
+}
+
+.token.variable {
+  color: #fb923c;
+}
+
+.token.regex,
+.token.important {
+  color: #f43f5e;
+}
+
+.token.delimiter.important {
+  color: #f43f5e;
+}
+
+
+/* Print Specific Refinements */
+@media print {
+  @page {
+    margin: 8mm 10mm;
+    size: letter portrait;
+  }
+
+  /* Reset all backgrounds and force clean white canvas */
+  *, *::before, *::after {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  html, body, #app, main, div, header, section, article, nav, aside {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+  }
+
+  body {
+    background-color: #ffffff !important;
+    color: #18181b !important;
+    font-size: 8.5pt !important;
+    line-height: 1.32 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* CRITICAL: Force high-contrast crisp text in print regardless of light/dark theme */
+  h1, h2, h3, h4, h5, h6, strong, b, .job-header {
+    color: #09090b !important;
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  .job-header + p,
+  .job-header + ul {
+    break-before: avoid !important;
+    page-break-before: avoid !important;
+  }
+
+  p, li, span, div, td, th {
+    color: #27272a !important;
+  }
+
+  /* Ensure emerald accents stay visible, dignified, and crisp in print */
+  .text-emerald-700,
+  .text-emerald-600,
+  .text-emerald-500,
+  [class*="text-emerald-"] {
+    color: #047857 !important;
+  }
+
+  /* Ensure metadata/dates stay legible and not washed out */
+  .text-zinc-400,
+  .text-zinc-500,
+  .text-zinc-600,
+  [class*="text-zinc-"] {
+    color: #4b5563 !important;
+  }
+
+  /* Specific section titles */
+  h2, h2 span {
+    color: #111827 !important;
+    font-weight: 700 !important;
+    font-size: 8pt !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  /* Compact section spacing in print */
+  section {
+    margin-top: 0.85rem !important;
+    margin-bottom: 0 !important;
+  }
+
+  section h2 {
+    margin-bottom: 0.35rem !important;
+  }
+
+  /* Articles (Experience items) */
+  article {
+    padding-bottom: 0.6rem !important;
+    margin-bottom: 0.15rem !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  article h3 {
+    font-size: 9.5pt !important;
+    color: #09090b !important;
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  article ul {
+    margin-top: 0.2rem !important;
+  }
+
+  article li {
+    font-size: 8pt !important;
+    line-height: 1.28 !important;
+    color: #27272a !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    margin-bottom: 0.18rem !important;
+  }
+
+  /* Technical Arsenal in print: clean 3 columns */
+  .grid-cols-1.md\:grid-cols-3 {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 0.6rem !important;
+  }
+
+  /* Education in print: clean 2 columns */
+  .grid-cols-1.md\:grid-cols-2 {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.75rem !important;
+  }
+
+  /* Smart Page Break Rules */
+  .print-hidden,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  .print-avoid-break {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Ensure links are plain text */
+  a {
+    text-decoration: none !important;
+    color: inherit !important;
+  }
+
+  /* Timeline line and border styling */
+  .border-l {
+    border-left-color: #d4d4d8 !important;
+    border-left-width: 1px !important;
+  }
+
+  .border-b {
+    border-bottom-color: #e4e4e7 !important;
+  }
+
+  .h-px {
+    background-color: #e4e4e7 !important;
+  }
+}
